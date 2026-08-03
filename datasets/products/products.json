@@ -1,0 +1,157 @@
+[
+  {
+    "product_id": "P001",
+    "name": "CloudDesk Chat",
+    "category": "Real-Time Messaging",
+    "version": "4.1",
+    "status": "Active",
+    "release_date": "2016-02-10",
+    "description": "Real-time messaging and live chat module of Corvex Cloud, giving support teams a unified workspace for live conversations across web and mobile channels.",
+    "supported_platforms": [
+      "Web (Chrome, Firefox, Safari, Edge)",
+      "iOS (Mobile SDK)",
+      "Android (Mobile SDK)",
+      "Mobile Web"
+    ],
+    "available_plans": ["Starter", "Professional", "Enterprise"],
+    "features": [
+      "Real-time messaging widget",
+      "Unified agent workspace",
+      "Smart routing",
+      "Canned responses and shortcuts",
+      "Typing indicators and read receipts",
+      "Conversation transfer and internal notes",
+      "Pre-chat forms",
+      "Offline and away messaging",
+      "Proactive chat triggers",
+      "Multi-language chat widget",
+      "AI-assisted response suggestions"
+    ],
+    "integrations": ["CRM platforms", "E-commerce platforms", "Collaboration tools", "Zapier", "Webhooks"],
+    "security_features": ["TLS 1.2+ encryption in transit", "AES-256 encryption at rest", "SAML 2.0 SSO", "SCIM provisioning", "IP allowlisting"]
+  },
+  {
+    "product_id": "P002",
+    "name": "CloudDesk Tickets",
+    "category": "Case Management",
+    "version": "5.3",
+    "status": "Active",
+    "release_date": "2015-09-01",
+    "description": "Case and ticket management module of Corvex Cloud, serving as the system of record for every customer support conversation regardless of originating channel.",
+    "supported_platforms": [
+      "Web (Chrome, Firefox, Safari, Edge)",
+      "Mobile Web",
+      "Email-to-Ticket",
+      "Web Form Submission"
+    ],
+    "available_plans": ["Starter", "Professional", "Enterprise"],
+    "features": [
+      "Unified ticket queue",
+      "Status and priority workflows",
+      "Assignment and ownership",
+      "Tagging and categorization",
+      "Canned responses and macros",
+      "Merge and split tickets",
+      "Full conversation and customer history",
+      "SLA management and alerts",
+      "Custom ticket fields and forms",
+      "Bulk actions and advanced macros",
+      "AI-assisted ticket triage"
+    ],
+    "integrations": ["CRM platforms", "E-commerce platforms", "Project management tools", "Collaboration tools", "Zapier", "Webhooks"],
+    "security_features": ["TLS 1.2+ encryption in transit", "AES-256 encryption at rest", "SAML 2.0 SSO", "SCIM provisioning", "IP allowlisting"]
+  },
+  {
+    "product_id": "P003",
+    "name": "CloudDesk Analytics",
+    "category": "Reporting & Business Intelligence",
+    "version": "3.2",
+    "status": "Active",
+    "release_date": "2018-05-14",
+    "description": "Reporting and business intelligence module of Corvex Cloud, reading in real time from the shared case data layer to power live dashboards and historical reporting.",
+    "supported_platforms": [
+      "Web (Chrome, Firefox, Safari, Edge)",
+      "Mobile Web (condensed snapshots)",
+      "Scheduled Email Delivery",
+      "Data Warehouse Export"
+    ],
+    "available_plans": ["Starter", "Professional", "Enterprise"],
+    "features": [
+      "Real-time queue dashboard",
+      "Standard performance reporting",
+      "CSAT reporting",
+      "NPS reporting",
+      "Channel breakdown views",
+      "Custom dashboards",
+      "Scheduled report delivery",
+      "Team-level performance analytics",
+      "Threshold alerts",
+      "Cross-brand and cross-region reporting",
+      "AI-assisted trend and anomaly surfacing"
+    ],
+    "integrations": ["Business intelligence tools", "CRM platforms", "Collaboration tools", "Zapier", "Webhooks"],
+    "security_features": ["TLS 1.2+ encryption in transit", "AES-256 encryption at rest", "SAML 2.0 SSO", "SCIM provisioning", "IP allowlisting", "Delivery restrictions", "Sharing controls"]
+  },
+  {
+    "product_id": "P004",
+    "name": "CloudDesk API Platform",
+    "category": "Developer & Extensibility",
+    "version": "2.7",
+    "status": "Active",
+    "release_date": "2019-11-04",
+    "description": "Developer and extensibility layer of Corvex Cloud, exposing REST APIs and webhooks that allow customers and partners to build on the same case data layer used across the platform.",
+    "supported_platforms": [
+      "REST API (HTTPS)",
+      "Webhooks (HTTPS POST)",
+      "Web (Developer Portal)",
+      "Sandbox Environment"
+    ],
+    "available_plans": ["Starter", "Professional", "Enterprise"],
+    "features": [
+      "REST API access",
+      "API authentication and credential management",
+      "Standard rate limiting",
+      "Developer documentation portal",
+      "Sandbox testing support",
+      "Zapier connectivity",
+      "Webhook support",
+      "Integration marketplace access",
+      "Custom integration support",
+      "Early access to new API endpoints",
+      "Corvex partner API access"
+    ],
+    "integrations": ["Corvex integration marketplace", "Business intelligence tools", "Zapier", "Custom customer-built integrations"],
+    "security_features": ["TLS 1.2+ encryption in transit", "AES-256 encryption at rest", "API key rotation policy", "Webhook signature verification", "IP allowlisting", "SCIM provisioning"]
+  },
+  {
+    "product_id": "P005",
+    "name": "CloudDesk Mobile",
+    "category": "Mobile Agent Application",
+    "version": "6.0",
+    "status": "Active",
+    "release_date": "2017-06-20",
+    "description": "Native mobile application for support agents, team leads, and administrators to work tickets and chats, monitor queue status, and respond to urgent issues from a phone or tablet.",
+    "supported_platforms": [
+      "iOS",
+      "Android",
+      "iPadOS (tablet-optimized)",
+      "Android Tablet (tablet-optimized)"
+    ],
+    "available_plans": ["Starter", "Professional", "Enterprise"],
+    "features": [
+      "Ticket and chat inbox",
+      "Push notifications",
+      "Canned responses",
+      "Customer and case history",
+      "Basic status and priority management",
+      "Team queue view",
+      "Biometric app lock",
+      "SLA and breach alerting",
+      "Team performance snapshots",
+      "Approval and escalation actions",
+      "AI-assisted suggested responses"
+    ],
+    "integrations": ["Single Sign-On (SSO)", "Mobile Device Management (MDM)", "Push notification services (APNs, FCM)"],
+    "security_features": ["TLS 1.2+ encryption in transit", "Device-level encryption at rest", "Biometric app lock", "Remote session revocation", "SAML 2.0 SSO", "Configurable data caching limits"]
+  }
+]

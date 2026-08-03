@@ -1,0 +1,1328 @@
+[
+  {
+    "employee_id": "EMP001",
+    "name": "Sarah Chen",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "CRM Systems",
+      "Authentication",
+      "Cloud"
+    ]
+  },
+  {
+    "employee_id": "EMP002",
+    "name": "James Okafor",
+    "department": "Technical Support",
+    "role": "Support Team Lead",
+    "skills": [
+      "Integrations",
+      "Customer De-escalation",
+      "Authentication"
+    ]
+  },
+  {
+    "employee_id": "EMP003",
+    "name": "Mia Rodriguez",
+    "department": "Technical Support",
+    "role": "Technical Support Specialist",
+    "skills": [
+      "Authentication",
+      "Cloud",
+      "Zapier"
+    ]
+  },
+  {
+    "employee_id": "EMP004",
+    "name": "Ethan Park",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "Cloud",
+      "Browser Debugging",
+      "Zapier"
+    ]
+  },
+  {
+    "employee_id": "EMP005",
+    "name": "Lucia Ferrari",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "SSO",
+      "Ticket Routing",
+      "Authentication",
+      "CRM Systems",
+      "Browser Debugging"
+    ]
+  },
+  {
+    "employee_id": "EMP006",
+    "name": "Noah Bennett",
+    "department": "Technical Support",
+    "role": "Technical Support Specialist",
+    "skills": [
+      "Browser Debugging",
+      "Webhooks",
+      "Live Chat Support"
+    ]
+  },
+  {
+    "employee_id": "EMP007",
+    "name": "Ava Thompson",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "SSO",
+      "Customer De-escalation",
+      "Live Chat Support",
+      "REST APIs",
+      "JSON"
+    ]
+  },
+  {
+    "employee_id": "EMP008",
+    "name": "Ravi Iyer",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "SQL",
+      "Integrations",
+      "SSO",
+      "Cloud",
+      "Authentication"
+    ]
+  },
+  {
+    "employee_id": "EMP009",
+    "name": "Chloe Martin",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Browser Debugging",
+      "Zapier",
+      "Mobile Troubleshooting",
+      "Escalation Management"
+    ]
+  },
+  {
+    "employee_id": "EMP010",
+    "name": "Owen Fitzgerald",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Integrations",
+      "Live Chat Support",
+      "Ticket Routing",
+      "REST APIs"
+    ]
+  },
+  {
+    "employee_id": "EMP011",
+    "name": "Zara Ahmed",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Cloud",
+      "Customer De-escalation",
+      "Live Chat Support"
+    ]
+  },
+  {
+    "employee_id": "EMP012",
+    "name": "Leo Schneider",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Escalation Management",
+      "Live Chat Support",
+      "Cloud",
+      "SSO"
+    ]
+  },
+  {
+    "employee_id": "EMP013",
+    "name": "Freya Lindqvist",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Mobile Troubleshooting",
+      "Webhooks",
+      "Networking"
+    ]
+  },
+  {
+    "employee_id": "EMP014",
+    "name": "Diego Morales",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "Cloud",
+      "Browser Debugging",
+      "Mobile Troubleshooting",
+      "Customer De-escalation",
+      "Integrations"
+    ]
+  },
+  {
+    "employee_id": "EMP015",
+    "name": "Ingrid Solberg",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Escalation Management",
+      "Cloud",
+      "Customer De-escalation",
+      "SLA Management",
+      "Networking"
+    ]
+  },
+  {
+    "employee_id": "EMP016",
+    "name": "Kwame Mensah",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Authentication",
+      "Live Chat Support",
+      "Escalation Management"
+    ]
+  },
+  {
+    "employee_id": "EMP017",
+    "name": "Nora Kowalski",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "Integrations",
+      "API",
+      "Escalation Management",
+      "JSON"
+    ]
+  },
+  {
+    "employee_id": "EMP018",
+    "name": "Sam Delgado",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "Networking",
+      "Authentication",
+      "SQL"
+    ]
+  },
+  {
+    "employee_id": "EMP019",
+    "name": "Yuki Tanaka",
+    "department": "Technical Support",
+    "role": "Support Team Lead",
+    "skills": [
+      "Ticket Routing",
+      "CRM Systems",
+      "Customer De-escalation"
+    ]
+  },
+  {
+    "employee_id": "EMP020",
+    "name": "Isla Campbell",
+    "department": "Technical Support",
+    "role": "Technical Support Specialist",
+    "skills": [
+      "Cloud",
+      "REST APIs",
+      "Escalation Management",
+      "CRM Systems"
+    ]
+  },
+  {
+    "employee_id": "EMP021",
+    "name": "Victor Nguyen",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "Zapier",
+      "Browser Debugging",
+      "SLA Management"
+    ]
+  },
+  {
+    "employee_id": "EMP022",
+    "name": "Amara Chukwu",
+    "department": "Technical Support",
+    "role": "Senior Support Engineer",
+    "skills": [
+      "CRM Systems",
+      "Ticket Routing",
+      "Webhooks",
+      "Cloud"
+    ]
+  },
+  {
+    "employee_id": "EMP023",
+    "name": "Finn O'Brien",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "Ticket Routing",
+      "API",
+      "Networking"
+    ]
+  },
+  {
+    "employee_id": "EMP024",
+    "name": "Priya Desai",
+    "department": "Technical Support",
+    "role": "Support Team Lead",
+    "skills": [
+      "SLA Management",
+      "Live Chat Support",
+      "API"
+    ]
+  },
+  {
+    "employee_id": "EMP025",
+    "name": "Caleb Foster",
+    "department": "Technical Support",
+    "role": "Support Engineer",
+    "skills": [
+      "Integrations",
+      "Customer De-escalation",
+      "Mobile Troubleshooting",
+      "Webhooks",
+      "Authentication"
+    ]
+  },
+  {
+    "employee_id": "EMP026",
+    "name": "Priya Natarajan",
+    "department": "Customer Success",
+    "role": "Senior Customer Success Manager",
+    "skills": [
+      "Health Scoring",
+      "SaaS Metrics",
+      "Churn Prevention",
+      "Stakeholder Communication",
+      "Salesforce"
+    ]
+  },
+  {
+    "employee_id": "EMP027",
+    "name": "Marcus Webb",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "Stakeholder Communication",
+      "Churn Prevention",
+      "Account Management",
+      "Upselling"
+    ]
+  },
+  {
+    "employee_id": "EMP028",
+    "name": "Elena Voss",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "QBR Facilitation",
+      "Renewals",
+      "Onboarding"
+    ]
+  },
+  {
+    "employee_id": "EMP029",
+    "name": "Dante Russo",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "Onboarding",
+      "Account Management",
+      "Salesforce"
+    ]
+  },
+  {
+    "employee_id": "EMP030",
+    "name": "Aisha Bello",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "Customer Advocacy",
+      "Salesforce",
+      "Account Management"
+    ]
+  },
+  {
+    "employee_id": "EMP031",
+    "name": "Connor Whitfield",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "Salesforce",
+      "Churn Prevention",
+      "Renewals"
+    ]
+  },
+  {
+    "employee_id": "EMP032",
+    "name": "Hana Sato",
+    "department": "Customer Success",
+    "role": "Senior Customer Success Manager",
+    "skills": [
+      "Salesforce",
+      "Customer Advocacy",
+      "QBR Facilitation",
+      "Onboarding"
+    ]
+  },
+  {
+    "employee_id": "EMP033",
+    "name": "Liam O'Sullivan",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "QBR Facilitation",
+      "Health Scoring",
+      "Contract Negotiation",
+      "Relationship Management"
+    ]
+  },
+  {
+    "employee_id": "EMP034",
+    "name": "Grace Kim",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "Contract Negotiation",
+      "Customer Advocacy",
+      "Relationship Management"
+    ]
+  },
+  {
+    "employee_id": "EMP035",
+    "name": "Tomas Novak",
+    "department": "Customer Success",
+    "role": "Senior Customer Success Manager",
+    "skills": [
+      "Renewals",
+      "SaaS Metrics",
+      "Account Management",
+      "Upselling",
+      "Contract Negotiation"
+    ]
+  },
+  {
+    "employee_id": "EMP036",
+    "name": "Nadia Farouk",
+    "department": "Customer Success",
+    "role": "Customer Success Manager",
+    "skills": [
+      "SaaS Metrics",
+      "Account Management",
+      "Health Scoring",
+      "Relationship Management",
+      "Onboarding"
+    ]
+  },
+  {
+    "employee_id": "EMP037",
+    "name": "Ben Ashworth",
+    "department": "Customer Success",
+    "role": "Senior Customer Success Manager",
+    "skills": [
+      "SaaS Metrics",
+      "Customer Advocacy",
+      "Renewals",
+      "Contract Negotiation"
+    ]
+  },
+  {
+    "employee_id": "EMP038",
+    "name": "Chris Curtis",
+    "department": "Engineering",
+    "role": "Engineering Manager",
+    "skills": [
+      "TypeScript",
+      "gRPC",
+      "Kubernetes",
+      "Distributed Systems",
+      "Terraform"
+    ]
+  },
+  {
+    "employee_id": "EMP039",
+    "name": "Joshua Diaz",
+    "department": "Engineering",
+    "role": "Site Reliability Engineer",
+    "skills": [
+      "Microservices",
+      "Kubernetes",
+      "CI/CD",
+      "gRPC"
+    ]
+  },
+  {
+    "employee_id": "EMP040",
+    "name": "Jordan Johnson",
+    "department": "Engineering",
+    "role": "Senior Software Engineer",
+    "skills": [
+      "Python",
+      "System Design",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "employee_id": "EMP041",
+    "name": "Benjamin Davis",
+    "department": "Engineering",
+    "role": "Senior Software Engineer",
+    "skills": [
+      "Docker",
+      "Microservices",
+      "System Design"
+    ]
+  },
+  {
+    "employee_id": "EMP042",
+    "name": "Ronald Martinez",
+    "department": "Engineering",
+    "role": "QA Engineer",
+    "skills": [
+      "Docker",
+      "Go",
+      "Kubernetes",
+      "Redis"
+    ]
+  },
+  {
+    "employee_id": "EMP043",
+    "name": "Mark Meza",
+    "department": "Engineering",
+    "role": "Software Engineer",
+    "skills": [
+      "TypeScript",
+      "Kubernetes",
+      "Microservices"
+    ]
+  },
+  {
+    "employee_id": "EMP044",
+    "name": "Jennifer Cherry",
+    "department": "Engineering",
+    "role": "Staff Engineer",
+    "skills": [
+      "Python",
+      "Microservices",
+      "TypeScript",
+      "AWS",
+      "Terraform"
+    ]
+  },
+  {
+    "employee_id": "EMP045",
+    "name": "Scott Roberts",
+    "department": "Engineering",
+    "role": "Software Engineer",
+    "skills": [
+      "Kubernetes",
+      "Redis",
+      "GraphQL",
+      "System Design",
+      "Docker"
+    ]
+  },
+  {
+    "employee_id": "EMP046",
+    "name": "Bruce Parker",
+    "department": "Engineering",
+    "role": "Engineering Manager",
+    "skills": [
+      "AWS",
+      "GraphQL",
+      "System Design",
+      "TypeScript"
+    ]
+  },
+  {
+    "employee_id": "EMP047",
+    "name": "Catherine Perkins",
+    "department": "Engineering",
+    "role": "Software Engineer",
+    "skills": [
+      "System Design",
+      "Microservices",
+      "GraphQL",
+      "Docker",
+      "Go"
+    ]
+  },
+  {
+    "employee_id": "EMP048",
+    "name": "Jacqueline Kelley",
+    "department": "Engineering",
+    "role": "Engineering Manager",
+    "skills": [
+      "PostgreSQL",
+      "Python",
+      "React"
+    ]
+  },
+  {
+    "employee_id": "EMP049",
+    "name": "Anthony Harris",
+    "department": "Engineering",
+    "role": "Senior Software Engineer",
+    "skills": [
+      "PostgreSQL",
+      "Distributed Systems",
+      "Terraform",
+      "Redis"
+    ]
+  },
+  {
+    "employee_id": "EMP050",
+    "name": "Jessica Edwards",
+    "department": "Engineering",
+    "role": "QA Engineer",
+    "skills": [
+      "Docker",
+      "React",
+      "CI/CD",
+      "Terraform",
+      "Redis"
+    ]
+  },
+  {
+    "employee_id": "EMP051",
+    "name": "Jody Evans",
+    "department": "Engineering",
+    "role": "Software Engineer",
+    "skills": [
+      "Kubernetes",
+      "CI/CD",
+      "Docker",
+      "React",
+      "GraphQL"
+    ]
+  },
+  {
+    "employee_id": "EMP052",
+    "name": "Melissa Sanchez",
+    "department": "Engineering",
+    "role": "QA Engineer",
+    "skills": [
+      "GraphQL",
+      "Python",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "employee_id": "EMP053",
+    "name": "Kelly Golden",
+    "department": "Product",
+    "role": "Product Manager",
+    "skills": [
+      "SQL",
+      "Agile",
+      "A/B Testing",
+      "Stakeholder Management",
+      "Wireframing"
+    ]
+  },
+  {
+    "employee_id": "EMP054",
+    "name": "Donna Baird",
+    "department": "Product",
+    "role": "Director of Product",
+    "skills": [
+      "Agile",
+      "Prioritization Frameworks",
+      "Wireframing"
+    ]
+  },
+  {
+    "employee_id": "EMP055",
+    "name": "Jason Sherman",
+    "department": "Product",
+    "role": "Senior Product Manager",
+    "skills": [
+      "Product Analytics",
+      "A/B Testing",
+      "Stakeholder Management",
+      "User Research",
+      "Wireframing"
+    ]
+  },
+  {
+    "employee_id": "EMP056",
+    "name": "John Williams",
+    "department": "Product",
+    "role": "Senior Product Manager",
+    "skills": [
+      "A/B Testing",
+      "Roadmapping",
+      "Product Analytics",
+      "User Research"
+    ]
+  },
+  {
+    "employee_id": "EMP057",
+    "name": "Pamela Berry",
+    "department": "Product",
+    "role": "Product Manager",
+    "skills": [
+      "User Research",
+      "Roadmapping",
+      "A/B Testing",
+      "Agile"
+    ]
+  },
+  {
+    "employee_id": "EMP058",
+    "name": "Emily Dominguez",
+    "department": "Product",
+    "role": "Senior Product Manager",
+    "skills": [
+      "Prioritization Frameworks",
+      "User Research",
+      "Stakeholder Management",
+      "Roadmapping",
+      "Wireframing"
+    ]
+  },
+  {
+    "employee_id": "EMP059",
+    "name": "Lauren Bryant",
+    "department": "Design",
+    "role": "Product Designer",
+    "skills": [
+      "UI Design",
+      "Prototyping",
+      "Design Systems"
+    ]
+  },
+  {
+    "employee_id": "EMP060",
+    "name": "Theresa Wells",
+    "department": "Design",
+    "role": "Senior Product Designer",
+    "skills": [
+      "User Testing",
+      "UX Research",
+      "Prototyping"
+    ]
+  },
+  {
+    "employee_id": "EMP061",
+    "name": "Amy Miles",
+    "department": "Design",
+    "role": "UX Researcher",
+    "skills": [
+      "Design Systems",
+      "Accessibility",
+      "UX Research",
+      "User Testing",
+      "Prototyping"
+    ]
+  },
+  {
+    "employee_id": "EMP062",
+    "name": "Wendy Short",
+    "department": "Design",
+    "role": "Senior Product Designer",
+    "skills": [
+      "Prototyping",
+      "User Testing",
+      "UI Design"
+    ]
+  },
+  {
+    "employee_id": "EMP063",
+    "name": "James Barnett",
+    "department": "Data & AI Research",
+    "role": "Applied AI Researcher",
+    "skills": [
+      "Model Evaluation",
+      "Machine Learning",
+      "A/B Testing"
+    ]
+  },
+  {
+    "employee_id": "EMP064",
+    "name": "Joel Jackson",
+    "department": "Data & AI Research",
+    "role": "Data Scientist",
+    "skills": [
+      "A/B Testing",
+      "PyTorch",
+      "Model Evaluation"
+    ]
+  },
+  {
+    "employee_id": "EMP065",
+    "name": "Anthony Tate",
+    "department": "Data & AI Research",
+    "role": "Machine Learning Engineer",
+    "skills": [
+      "Statistics",
+      "Machine Learning",
+      "NLP",
+      "SQL",
+      "Data Pipelines"
+    ]
+  },
+  {
+    "employee_id": "EMP066",
+    "name": "David Myers",
+    "department": "Data & AI Research",
+    "role": "Machine Learning Engineer",
+    "skills": [
+      "Feature Engineering",
+      "PyTorch",
+      "Machine Learning"
+    ]
+  },
+  {
+    "employee_id": "EMP067",
+    "name": "Angela Cole",
+    "department": "Data & AI Research",
+    "role": "Data Scientist",
+    "skills": [
+      "NLP",
+      "PyTorch",
+      "A/B Testing",
+      "Model Evaluation"
+    ]
+  },
+  {
+    "employee_id": "EMP068",
+    "name": "Sophia Fuentes",
+    "department": "Data & AI Research",
+    "role": "Data & AI Research Lead",
+    "skills": [
+      "SQL",
+      "Model Evaluation",
+      "PyTorch",
+      "A/B Testing"
+    ]
+  },
+  {
+    "employee_id": "EMP069",
+    "name": "Diana Perry",
+    "department": "Sales",
+    "role": "Account Executive",
+    "skills": [
+      "Cold Outreach",
+      "Salesforce",
+      "Negotiation",
+      "Enterprise Sales",
+      "Pipeline Management"
+    ]
+  },
+  {
+    "employee_id": "EMP070",
+    "name": "Stephen Rosario",
+    "department": "Sales",
+    "role": "Senior Account Executive",
+    "skills": [
+      "Discovery Calls",
+      "Cold Outreach",
+      "Enterprise Sales"
+    ]
+  },
+  {
+    "employee_id": "EMP071",
+    "name": "Christopher Hall",
+    "department": "Sales",
+    "role": "Sales Development Representative",
+    "skills": [
+      "Solution Selling",
+      "CRM Systems",
+      "Discovery Calls",
+      "Forecasting",
+      "Salesforce"
+    ]
+  },
+  {
+    "employee_id": "EMP072",
+    "name": "John Lawrence",
+    "department": "Sales",
+    "role": "Account Executive",
+    "skills": [
+      "Salesforce",
+      "Negotiation",
+      "Forecasting",
+      "Solution Selling"
+    ]
+  },
+  {
+    "employee_id": "EMP073",
+    "name": "Aaron Barnes",
+    "department": "Sales",
+    "role": "Sales Development Representative",
+    "skills": [
+      "Enterprise Sales",
+      "Discovery Calls",
+      "Solution Selling",
+      "CRM Systems",
+      "Cold Outreach"
+    ]
+  },
+  {
+    "employee_id": "EMP074",
+    "name": "Keith Benton",
+    "department": "Sales",
+    "role": "Senior Account Executive",
+    "skills": [
+      "Cold Outreach",
+      "Solution Selling",
+      "Negotiation",
+      "Salesforce",
+      "Forecasting"
+    ]
+  },
+  {
+    "employee_id": "EMP075",
+    "name": "Kaylee Williamson",
+    "department": "Sales",
+    "role": "Senior Account Executive",
+    "skills": [
+      "Enterprise Sales",
+      "Salesforce",
+      "Cold Outreach"
+    ]
+  },
+  {
+    "employee_id": "EMP076",
+    "name": "Amy Lam",
+    "department": "Sales",
+    "role": "Account Executive",
+    "skills": [
+      "Solution Selling",
+      "Pipeline Management",
+      "Salesforce",
+      "Negotiation"
+    ]
+  },
+  {
+    "employee_id": "EMP077",
+    "name": "Shelly Yates",
+    "department": "Sales",
+    "role": "Sales Manager",
+    "skills": [
+      "Salesforce",
+      "Cold Outreach",
+      "Enterprise Sales",
+      "Pipeline Management"
+    ]
+  },
+  {
+    "employee_id": "EMP078",
+    "name": "James Garcia",
+    "department": "Sales",
+    "role": "Sales Manager",
+    "skills": [
+      "Negotiation",
+      "Salesforce",
+      "Enterprise Sales",
+      "Cold Outreach"
+    ]
+  },
+  {
+    "employee_id": "EMP079",
+    "name": "Amy Jones",
+    "department": "Marketing",
+    "role": "Product Marketing Manager",
+    "skills": [
+      "Campaign Management",
+      "Copywriting",
+      "SEO"
+    ]
+  },
+  {
+    "employee_id": "EMP080",
+    "name": "Christopher Peterson",
+    "department": "Marketing",
+    "role": "Content Marketing Manager",
+    "skills": [
+      "Copywriting",
+      "Marketing Analytics",
+      "Campaign Management",
+      "Brand Strategy"
+    ]
+  },
+  {
+    "employee_id": "EMP081",
+    "name": "Aaron Hernandez",
+    "department": "Marketing",
+    "role": "Demand Generation Manager",
+    "skills": [
+      "Copywriting",
+      "Positioning",
+      "Email Marketing"
+    ]
+  },
+  {
+    "employee_id": "EMP082",
+    "name": "Jack Johnson",
+    "department": "Marketing",
+    "role": "Content Marketing Manager",
+    "skills": [
+      "SEO",
+      "HubSpot",
+      "Brand Strategy",
+      "Positioning"
+    ]
+  },
+  {
+    "employee_id": "EMP083",
+    "name": "Lisa Hernandez",
+    "department": "Marketing",
+    "role": "Demand Generation Manager",
+    "skills": [
+      "HubSpot",
+      "Brand Strategy",
+      "Content Strategy"
+    ]
+  },
+  {
+    "employee_id": "EMP084",
+    "name": "Gregory Diaz",
+    "department": "Marketing",
+    "role": "Brand Designer",
+    "skills": [
+      "Email Marketing",
+      "Brand Strategy",
+      "Copywriting"
+    ]
+  },
+  {
+    "employee_id": "EMP085",
+    "name": "Samuel Kaiser",
+    "department": "Security & Trust",
+    "role": "Head of Security & Trust",
+    "skills": [
+      "Threat Modeling",
+      "Penetration Testing",
+      "Risk Assessment",
+      "Incident Response"
+    ]
+  },
+  {
+    "employee_id": "EMP086",
+    "name": "John Miller",
+    "department": "Security & Trust",
+    "role": "Head of Security & Trust",
+    "skills": [
+      "SIEM",
+      "SSO",
+      "Threat Modeling",
+      "Network Security"
+    ]
+  },
+  {
+    "employee_id": "EMP087",
+    "name": "Grant Baker",
+    "department": "Security & Trust",
+    "role": "Head of Security & Trust",
+    "skills": [
+      "Vulnerability Management",
+      "Incident Response",
+      "Risk Assessment"
+    ]
+  },
+  {
+    "employee_id": "EMP088",
+    "name": "Candice Johnson",
+    "department": "Security & Trust",
+    "role": "Vendor Risk Analyst",
+    "skills": [
+      "Compliance Frameworks",
+      "SSO",
+      "Vulnerability Management",
+      "Threat Modeling"
+    ]
+  },
+  {
+    "employee_id": "EMP089",
+    "name": "Kelsey Thomas",
+    "department": "Security & Trust",
+    "role": "Vendor Risk Analyst",
+    "skills": [
+      "Threat Modeling",
+      "Penetration Testing",
+      "Network Security",
+      "Incident Response"
+    ]
+  },
+  {
+    "employee_id": "EMP090",
+    "name": "Alyssa Rice",
+    "department": "People (HR)",
+    "role": "Recruiter",
+    "skills": [
+      "Compensation Planning",
+      "Employee Relations",
+      "HRIS"
+    ]
+  },
+  {
+    "employee_id": "EMP091",
+    "name": "Sharon Horton",
+    "department": "People (HR)",
+    "role": "People Partner",
+    "skills": [
+      "Onboarding Programs",
+      "Organizational Development",
+      "HRIS"
+    ]
+  },
+  {
+    "employee_id": "EMP092",
+    "name": "Jacob Jackson",
+    "department": "People (HR)",
+    "role": "Head of People",
+    "skills": [
+      "Onboarding Programs",
+      "Employee Relations",
+      "Recruiting",
+      "Organizational Development",
+      "Performance Management"
+    ]
+  },
+  {
+    "employee_id": "EMP093",
+    "name": "Kim Maxwell",
+    "department": "People (HR)",
+    "role": "People Partner",
+    "skills": [
+      "Onboarding Programs",
+      "Compensation Planning",
+      "Recruiting"
+    ]
+  },
+  {
+    "employee_id": "EMP094",
+    "name": "Daniel Cain",
+    "department": "People (HR)",
+    "role": "Recruiter",
+    "skills": [
+      "HRIS",
+      "Employee Relations",
+      "Organizational Development",
+      "Recruiting",
+      "Compensation Planning"
+    ]
+  },
+  {
+    "employee_id": "EMP095",
+    "name": "Dr. Renee Cardenas",
+    "department": "Finance & Operations",
+    "role": "Financial Analyst",
+    "skills": [
+      "Billing Systems",
+      "Revenue Recognition",
+      "Excel"
+    ]
+  },
+  {
+    "employee_id": "EMP096",
+    "name": "Cristina Holmes",
+    "department": "Finance & Operations",
+    "role": "Financial Analyst",
+    "skills": [
+      "Excel",
+      "Billing Systems",
+      "SaaS Metrics"
+    ]
+  },
+  {
+    "employee_id": "EMP097",
+    "name": "Allen Johnson",
+    "department": "Finance & Operations",
+    "role": "Financial Analyst",
+    "skills": [
+      "Billing Systems",
+      "SaaS Metrics",
+      "Budgeting",
+      "Excel",
+      "Revenue Recognition"
+    ]
+  },
+  {
+    "employee_id": "EMP098",
+    "name": "David Schwartz",
+    "department": "Finance & Operations",
+    "role": "Billing Operations Specialist",
+    "skills": [
+      "Vendor Management",
+      "Forecasting",
+      "Billing Systems",
+      "Excel",
+      "Budgeting"
+    ]
+  },
+  {
+    "employee_id": "EMP099",
+    "name": "Jillian Giles",
+    "department": "Finance & Operations",
+    "role": "Financial Analyst",
+    "skills": [
+      "Budgeting",
+      "SaaS Metrics",
+      "Vendor Management",
+      "Excel",
+      "Forecasting"
+    ]
+  },
+  {
+    "employee_id": "EMP100",
+    "name": "Tina Diaz MD",
+    "department": "Finance & Operations",
+    "role": "Head of Finance & Operations",
+    "skills": [
+      "Financial Modeling",
+      "Budgeting",
+      "SaaS Metrics",
+      "Excel",
+      "Forecasting"
+    ]
+  },
+  {
+    "employee_id": "EMP101",
+    "name": "Craig Harris",
+    "department": "Legal & Compliance",
+    "role": "Corporate Counsel",
+    "skills": [
+      "Data Privacy Law",
+      "Regulatory Compliance",
+      "Contract Negotiation"
+    ]
+  },
+  {
+    "employee_id": "EMP102",
+    "name": "Stephanie Pittman",
+    "department": "Legal & Compliance",
+    "role": "Corporate Counsel",
+    "skills": [
+      "Risk Management",
+      "Contract Negotiation",
+      "Policy Drafting",
+      "Regulatory Compliance"
+    ]
+  },
+  {
+    "employee_id": "EMP103",
+    "name": "Matthew Marsh",
+    "department": "Legal & Compliance",
+    "role": "Compliance Analyst",
+    "skills": [
+      "Vendor Agreements",
+      "Regulatory Compliance",
+      "Contract Negotiation"
+    ]
+  },
+  {
+    "employee_id": "EMP104",
+    "name": "Matthew Browning",
+    "department": "Legal & Compliance",
+    "role": "Compliance Analyst",
+    "skills": [
+      "Policy Drafting",
+      "Risk Management",
+      "Contract Negotiation"
+    ]
+  },
+  {
+    "employee_id": "EMP105",
+    "name": "Nicole Woods",
+    "department": "Support / Customer Experience",
+    "role": "Knowledge Base Specialist",
+    "skills": [
+      "Process Improvement",
+      "SLA Management",
+      "Knowledge Management"
+    ]
+  },
+  {
+    "employee_id": "EMP106",
+    "name": "Richard Cook",
+    "department": "Support / Customer Experience",
+    "role": "Head of Customer Experience",
+    "skills": [
+      "Workforce Management",
+      "Process Improvement",
+      "Quality Assurance",
+      "Knowledge Management"
+    ]
+  },
+  {
+    "employee_id": "EMP107",
+    "name": "Valerie Foster",
+    "department": "Support / Customer Experience",
+    "role": "Knowledge Base Specialist",
+    "skills": [
+      "SLA Management",
+      "Process Improvement",
+      "Support Operations",
+      "Workforce Management"
+    ]
+  },
+  {
+    "employee_id": "EMP108",
+    "name": "Travis Hardy",
+    "department": "Support / Customer Experience",
+    "role": "Head of Customer Experience",
+    "skills": [
+      "Support Operations",
+      "Quality Assurance",
+      "Workforce Management",
+      "Process Improvement"
+    ]
+  },
+  {
+    "employee_id": "EMP109",
+    "name": "Cameron Hernandez",
+    "department": "Executive Leadership",
+    "role": "Chief Revenue Officer",
+    "skills": [
+      "Cross-Functional Leadership",
+      "Board Reporting",
+      "Organizational Strategy",
+      "Strategic Planning"
+    ]
+  },
+  {
+    "employee_id": "EMP110",
+    "name": "Renee Thomas",
+    "department": "Executive Leadership",
+    "role": "Chief Technology Officer",
+    "skills": [
+      "Organizational Strategy",
+      "Cross-Functional Leadership",
+      "Board Reporting"
+    ]
+  },
+  {
+    "employee_id": "EMP111",
+    "name": "Veronica Sandoval",
+    "department": "Executive Leadership",
+    "role": "Chief Technology Officer",
+    "skills": [
+      "Organizational Strategy",
+      "Cross-Functional Leadership",
+      "Board Reporting"
+    ]
+  },
+  {
+    "employee_id": "EMP112",
+    "name": "Joshua Anderson",
+    "department": "Executive Leadership",
+    "role": "Chief Revenue Officer",
+    "skills": [
+      "Organizational Strategy",
+      "Board Reporting",
+      "Strategic Planning",
+      "Cross-Functional Leadership"
+    ]
+  }
+]
