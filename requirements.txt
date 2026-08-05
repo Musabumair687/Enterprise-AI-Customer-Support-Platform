@@ -1,0 +1,31 @@
+# --- PHASE 1: Backend Foundation ---
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+
+# --- PHASE 2 & 3: Database & Import ---
+sqlalchemy
+alembic
+pandas
+
+# --- PHASE 5 - 12: AI, RAG & LangGraph ---
+langchain
+langchain-openai
+langchain-google-genai   # Added: For Google Gemini
+langchain-groq           # Added: For Groq Cloud API
+langchain-xai            # Added: For xAI Grok
+langchain-community
+langgraph
+chromadb
+openai
+tiktoken
+
+# --- PHASE 15: Authentication ---
+python-jose[cryptography]
+passlib[bcrypt]
+
+# --- PHASE 18: Testing ---
+pytest
+httpx
