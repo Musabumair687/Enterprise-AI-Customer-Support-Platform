@@ -14,6 +14,7 @@ from app.core.exceptions import (
     validation_exception_handler,
 )
 from app.core.logging import configure_logging, get_logger, request_logging_middleware
+from app.database.database import initialize_database
 from app.schemas.response import APIResponse
 
 
@@ -22,6 +23,8 @@ async def lifespan(_: FastAPI):
     """Validate settings and initialize shared resources during app lifecycle."""
     settings = validate_settings()
     logger = configure_logging(settings)
+    initialize_database()
+    logger.info("Database connection initialized.")
     logger.info("Application startup complete.")
     yield
     get_logger().info("Application shutdown complete.")
