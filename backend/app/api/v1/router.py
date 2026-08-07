@@ -23,10 +23,18 @@ the standard API response format.
 
 from fastapi import APIRouter, status
 
+from app.api import billing, conversations, customers, employees, health, products, tickets
 from app.schemas.response import APIResponse
 
 
 router = APIRouter()
+router.include_router(health.router)
+router.include_router(customers.router)
+router.include_router(tickets.router)
+router.include_router(billing.router)
+router.include_router(products.router)
+router.include_router(employees.router)
+router.include_router(conversations.router)
 
 
 @router.get("", response_model=APIResponse[dict[str, str]], status_code=status.HTTP_200_OK)

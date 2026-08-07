@@ -57,6 +57,7 @@ Benefits:
 ===============================================================================
 """
 from fastapi import Request, status
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
@@ -89,11 +90,13 @@ async def validation_exception_handler(
         "Validation error | method=%s path=%s errors=%s",
         request.method,
         request.url.path,
-        exc.error_count(),
+        len(exc.errors()),
     )
     return JSONResponse(
         status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
-        content=build_error_response("Request validation failed.", {"details": exc.errors()}),
+        content=build_error_response(
+            "Request validation failed.", {"details": jsonable_encoder(exc.errors())}
+        ),
     )
 
 
