@@ -27,7 +27,7 @@ changes in production.
 from datetime import datetime
 from decimal import Decimal
 
-from sqlalchemy import DateTime, ForeignKey, Numeric, String, Text, func
+from sqlalchemy import Date, DateTime, ForeignKey, Numeric, String, Text, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
@@ -41,11 +41,23 @@ class Customer(Base):
     __tablename__ = "customers"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(50), unique=True, index=True)
     name: Mapped[str] = mapped_column(String(150), nullable=False)
     email: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
     company: Mapped[str | None] = mapped_column(String(150))
     phone: Mapped[str | None] = mapped_column(String(50))
+    country: Mapped[str | None] = mapped_column(String(100))
+    timezone: Mapped[str | None] = mapped_column(String(100))
+    subscription_plan: Mapped[str | None] = mapped_column(String(80))
     status: Mapped[str] = mapped_column(String(30), default="active", nullable=False)
+    registration_date: Mapped[datetime | None] = mapped_column(Date)
+    renewal_date: Mapped[datetime | None] = mapped_column(Date)
+    last_login: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    preferred_language: Mapped[str | None] = mapped_column(String(80))
+    support_tier: Mapped[str | None] = mapped_column(String(80))
+    account_manager: Mapped[str | None] = mapped_column(String(150))
+    monthly_revenue: Mapped[Decimal | None] = mapped_column(Numeric(12, 2))
+    lifetime_value: Mapped[Decimal | None] = mapped_column(Numeric(14, 2))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
@@ -97,11 +109,18 @@ class Ticket(Base):
     __tablename__ = "tickets"
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    external_id: Mapped[str | None] = mapped_column(String(50), unique=True, index=True)
     title: Mapped[str] = mapped_column(String(255), nullable=False)
     description: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[str] = mapped_column(String(30), default="open", nullable=False)
     priority: Mapped[str] = mapped_column(String(30), default="medium", nullable=False)
+    department: Mapped[str | None] = mapped_column(String(100))
     category: Mapped[str | None] = mapped_column(String(80))
+    assigned_agent_name: Mapped[str | None] = mapped_column(String(150))
+    resolution: Mapped[str | None] = mapped_column(Text)
+    sentiment: Mapped[str | None] = mapped_column(String(30))
+    resolution_time_hours: Mapped[Decimal | None] = mapped_column(Numeric(10, 2))
+    is_escalated: Mapped[bool] = mapped_column(default=False, nullable=False)
     customer_id: Mapped[int] = mapped_column(ForeignKey("customers.id"), nullable=False)
     assigned_employee_id: Mapped[int | None] = mapped_column(ForeignKey("employees.id"))
     product_id: Mapped[int | None] = mapped_column(ForeignKey("products.id"))
@@ -124,10 +143,15 @@ class Billing(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     customer_id: Mapped[int] = mapped_column(ForeignKey("customers.id"), nullable=False)
     invoice_number: Mapped[str | None] = mapped_column(String(100), unique=True)
+    plan: Mapped[str | None] = mapped_column(String(80))
     amount: Mapped[Decimal] = mapped_column(Numeric(12, 2), nullable=False)
     currency: Mapped[str] = mapped_column(String(3), default="USD", nullable=False)
     status: Mapped[str] = mapped_column(String(30), default="pending", nullable=False)
     record_type: Mapped[str] = mapped_column(String(30), default="invoice", nullable=False)
+    payment_method: Mapped[str | None] = mapped_column(String(80))
+    due_date: Mapped[datetime | None] = mapped_column(Date)
+    paid_date: Mapped[datetime | None] = mapped_column(Date)
+    refund_status: Mapped[str | None] = mapped_column(String(50))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     customer: Mapped["Customer"] = relationship(back_populates="billing_records")

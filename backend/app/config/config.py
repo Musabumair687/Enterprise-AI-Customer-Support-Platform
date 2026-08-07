@@ -32,9 +32,14 @@ class Settings(BaseSettings):
     @field_validator("database_url")
     @classmethod
     def validate_database_url(cls, value: str) -> str:
-        """Require the local SQLite URL format used during development."""
+        """Require SQLite and resolve relative database files from backend/ consistently."""
         if not value.startswith("sqlite:///"):
             raise ValueError("DATABASE_URL must start with 'sqlite:///'")
+
+        database_path = value.removeprefix("sqlite:///")
+        if database_path.startswith("./"):
+            resolved_path = PROJECT_ROOT / "backend" / database_path.removeprefix("./")
+            return f"sqlite:///{resolved_path.as_posix()}"
         return value
 
     @field_validator("log_level", mode="before")
