@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     secret_key: str = Field(min_length=32)
     model_name: str = Field(min_length=1)
     embedding_model: str = Field(min_length=1)
+    chroma_path: str = Field(min_length=1)
+    embedding_batch_size: int = Field(default=50, ge=1, le=100)
+    embedding_batch_pause_seconds: float = Field(default=30.0, ge=0)
 
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
@@ -51,6 +54,15 @@ class Settings(BaseSettings):
             allowed_levels = ", ".join(sorted(VALID_LOG_LEVELS))
             raise ValueError(f"LOG_LEVEL must be one of: {allowed_levels}")
         return normalized_value
+
+    @field_validator("chroma_path")
+    @classmethod
+    def validate_chroma_path(cls, value: str) -> str:
+        """Resolve persistent Chroma storage relative to backend/ when configured with ./ syntax."""
+        path = Path(value)
+        if not path.is_absolute():
+            path = PROJECT_ROOT / "backend" / path
+        return str(path.resolve())
 
 
 @lru_cache
