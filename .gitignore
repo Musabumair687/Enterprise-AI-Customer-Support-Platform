@@ -15,5 +15,7 @@ __pycache__/
 *.sqlite3
 
 chroma/
+backend/artifacts/
+backend/data/rag/
 
 *.log

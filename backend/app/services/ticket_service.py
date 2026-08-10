@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from sqlalchemy import select
+from sqlalchemy import or_, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -15,6 +15,15 @@ def list_tickets(db: Session, skip: int, limit: int) -> list[Ticket]:
 
 def get_ticket(db: Session, ticket_id: int) -> Ticket | None:
     return db.get(Ticket, ticket_id)
+
+
+def search_tickets(db: Session, query: str, customer_id: int | None, limit: int) -> list[Ticket]:
+    """Search case titles/descriptions, optionally within one customer's tickets."""
+    pattern = f"%{query.strip()}%"
+    statement = select(Ticket).where(or_(Ticket.title.ilike(pattern), Ticket.description.ilike(pattern)))
+    if customer_id is not None:
+        statement = statement.where(Ticket.customer_id == customer_id)
+    return list(db.scalars(statement.order_by(Ticket.updated_at.desc()).limit(limit)))
 
 
 def _validate_relations(db: Session, values: dict[str, Any]) -> str | None:
