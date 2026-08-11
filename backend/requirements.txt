@@ -5,4 +5,6 @@ sqlalchemy==2.0.51
 uvicorn[standard]==0.52.1
 chromadb
 langchain-google-genai
+google-genai>=1.0.0
+groq>=0.31.0
 sentence-transformers

@@ -16,10 +16,15 @@ class Settings(BaseSettings):
     """Validated settings shared by the backend application."""
 
     gemini_api_key: str = Field(min_length=1)
+    groq_api_key: str = Field(min_length=1)
     database_url: str = Field(min_length=1)
     log_level: str = Field(min_length=1)
     secret_key: str = Field(min_length=32)
     model_name: str = Field(min_length=1)
+    default_llm_provider: str = Field(default="gemini", pattern="^(gemini|groq)$")
+    gemini_model: str = Field(default="gemini-3.6-flash", min_length=1)
+    groq_model: str = Field(default="llama-3.3-70b-versatile", min_length=1)
+    llm_timeout_seconds: float = Field(default=60.0, gt=0, le=300)
     embedding_model: str = Field(min_length=1)
     chroma_path: str = Field(min_length=1)
     embedding_batch_size: int = Field(default=50, ge=1, le=100)
