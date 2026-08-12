@@ -37,7 +37,13 @@ class GeminiEmbeddingService:
                 raise RuntimeError(
                     "Gemini embeddings require langchain-google-genai. Install backend requirements first."
                 ) from exc
-            self._client = GoogleGenerativeAIEmbeddings(model=self.model_name, google_api_key=self.api_key)
+            # The integration exposes ``api_key`` as a Pydantic alias but its
+            # generated type signature exposes a different field name.  Parsing
+            # the provider payload keeps the supported public API and avoids a
+            # false editor error on the alias keyword.
+            self._client = GoogleGenerativeAIEmbeddings.model_validate(
+                {"model": self.model_name, "api_key": self.api_key}
+            )
         return self._client
 
     def embed_documents(self, texts: Sequence[str]) -> list[list[float]]:

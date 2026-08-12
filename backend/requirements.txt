@@ -7,4 +7,5 @@ chromadb
 langchain-google-genai
 google-genai>=1.0.0
 groq>=0.31.0
+langgraph>=1.0.0
 sentence-transformers

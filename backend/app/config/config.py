@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     secret_key: str = Field(min_length=32)
     model_name: str = Field(min_length=1)
     default_llm_provider: str = Field(default="gemini", pattern="^(gemini|groq)$")
+    router_llm_provider: str = Field(default="gemini", pattern="^(gemini|groq)$")
     gemini_model: str = Field(default="gemini-3.6-flash", min_length=1)
     groq_model: str = Field(default="llama-3.3-70b-versatile", min_length=1)
     llm_timeout_seconds: float = Field(default=60.0, gt=0, le=300)
