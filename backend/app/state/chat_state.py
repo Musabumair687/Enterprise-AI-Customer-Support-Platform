@@ -1,24 +1,16 @@
-"""Minimal state passed through the Phase 8 customer-support graph."""
+"""State passed through the Phase 9 intent-classification graph."""
 
-from typing import Literal, TypedDict
+from typing import TypedDict
 
 from langchain_core.messages import BaseMessage
 
-
-Route = Literal[
-    "knowledge",
-    "ticket",
-    "billing",
-    "technical_support",
-    "account",
-    "escalation",
-    "unknown",
-]
+from app.schemas.intent import Intent
 
 
 class ChatState(TypedDict):
-    """Conversation data plus the single routing decision produced in Phase 8."""
+    """Conversation data, its classified intent, and traceable classification metadata."""
 
     messages: list[BaseMessage]
     session_id: str
-    route: Route
+    intent: Intent | None
+    metadata: dict[str, str | float | int | None]

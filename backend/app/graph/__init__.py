@@ -1,4 +1,4 @@
-"""Phase 8 LangGraph routing workflow."""
+"""Phase 9 LangGraph intent-classification workflow."""
 
 from app.graph.workflow import CustomerSupportWorkflow
 
