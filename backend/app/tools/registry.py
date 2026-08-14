@@ -29,7 +29,7 @@ class ToolDefinition:
     allowed_agents: frozenset[str]
 
 
-ALL_AGENTS = frozenset({"billing_agent", "technical_support_agent", "customer_support_agent", "escalation_agent"})
+ALL_AGENTS = frozenset({"billing_agent", "customer_agent", "technical_agent", "product_agent", "escalation_agent", "sales_agent"})
 logger = logging.getLogger(__name__)
 
 
@@ -39,26 +39,26 @@ def _tool(name: str, description: str, handler: Callable[..., Any], *, read_only
 
 
 TOOL_REGISTRY: dict[str, ToolDefinition] = {
-    "customer_lookup": _tool("customer_lookup", "Retrieve a customer's support account details.", customer_lookup_tool, read_only=True),
-    "customer_search": _tool("customer_search", "Search customers by name, email, or company.", customer_search_tool, read_only=True),
-    "get_ticket": _tool("get_ticket", "Retrieve a support ticket.", get_ticket_tool, read_only=True),
-    "search_tickets": _tool("search_tickets", "Search support tickets.", search_tickets_tool, read_only=True),
+    "customer_lookup": _tool("customer_lookup", "Retrieve a customer's support account details.", customer_lookup_tool, read_only=True, agents=frozenset({"customer_agent", "sales_agent"})),
+    "customer_search": _tool("customer_search", "Search customers by name, email, or company.", customer_search_tool, read_only=True, agents=frozenset({"customer_agent"})),
+    "get_ticket": _tool("get_ticket", "Retrieve a support ticket.", get_ticket_tool, read_only=True, agents=frozenset({"technical_agent"})),
+    "search_tickets": _tool("search_tickets", "Search support tickets.", search_tickets_tool, read_only=True, agents=frozenset({"technical_agent"})),
     "create_ticket": _tool("create_ticket", "Create a support ticket.", create_ticket_tool, read_only=False, confirmation=True, agents=frozenset({"technical_support_agent", "customer_support_agent"})),
-    "update_ticket": _tool("update_ticket", "Update a support ticket.", update_ticket_tool, read_only=False, confirmation=True, agents=frozenset({"technical_support_agent", "customer_support_agent", "escalation_agent"})),
+    "update_ticket": _tool("update_ticket", "Update a support ticket.", update_ticket_tool, read_only=False, confirmation=True, agents=frozenset({"technical_support_agent", "customer_support_agent"})),
     "get_invoice": _tool("get_invoice", "Retrieve an invoice or billing record.", get_invoice_tool, read_only=True, agents=frozenset({"billing_agent", "customer_support_agent"})),
     "search_invoices": _tool("search_invoices", "Search billing records.", search_invoices_tool, read_only=True, agents=frozenset({"billing_agent", "customer_support_agent"})),
     "get_payment_status": _tool("get_payment_status", "Retrieve an invoice payment status.", get_payment_status_tool, read_only=True, agents=frozenset({"billing_agent", "customer_support_agent"})),
     "get_refund_status": _tool("get_refund_status", "Retrieve a refund status.", get_refund_status_tool, read_only=True, agents=frozenset({"billing_agent", "customer_support_agent"})),
-    "get_customer_crm_profile": _tool("get_customer_crm_profile", "Retrieve account context and recent conversations.", get_customer_crm_profile_tool, read_only=True, agents=frozenset({"customer_support_agent", "escalation_agent"})),
-    "get_product": _tool("get_product", "Retrieve product details and version.", get_product_tool, read_only=True),
-    "list_products": _tool("list_products", "List supported products.", list_products_tool, read_only=True),
-    "search_known_issues": _tool("search_known_issues", "Search documented issues and workarounds.", search_known_issues_tool, read_only=True, agents=frozenset({"technical_support_agent", "customer_support_agent"})),
-    "find_employee": _tool("find_employee", "Retrieve an employee directory record.", find_employee_tool, read_only=True, agents=frozenset({"escalation_agent", "technical_support_agent"})),
-    "find_employee_by_skill": _tool("find_employee_by_skill", "Find employees by role or specialization.", find_employee_by_skill_tool, read_only=True, agents=frozenset({"escalation_agent", "technical_support_agent"})),
-    "find_support_agent": _tool("find_support_agent", "Find an active human support specialist.", find_support_agent_tool, read_only=True, agents=frozenset({"escalation_agent", "technical_support_agent"})),
+    "get_customer_crm_profile": _tool("get_customer_crm_profile", "Retrieve account context and recent conversations.", get_customer_crm_profile_tool, read_only=True, agents=frozenset({"sales_agent"})),
+    "get_product": _tool("get_product", "Retrieve product details and version.", get_product_tool, read_only=True, agents=frozenset({"product_agent", "sales_agent"})),
+    "list_products": _tool("list_products", "List supported products.", list_products_tool, read_only=True, agents=frozenset({"product_agent", "sales_agent"})),
+    "search_known_issues": _tool("search_known_issues", "Search documented issues and workarounds.", search_known_issues_tool, read_only=True, agents=frozenset({"technical_agent"})),
+    "find_employee": _tool("find_employee", "Retrieve an employee directory record.", find_employee_tool, read_only=True, agents=frozenset({"escalation_agent"})),
+    "find_employee_by_skill": _tool("find_employee_by_skill", "Find employees by role or specialization.", find_employee_by_skill_tool, read_only=True, agents=frozenset({"escalation_agent"})),
+    "find_support_agent": _tool("find_support_agent", "Find an active human support specialist.", find_support_agent_tool, read_only=True, agents=frozenset({"escalation_agent"})),
     "assign_ticket": _tool("assign_ticket", "Assign a ticket to a human employee.", assign_ticket_tool, read_only=False, confirmation=True, agents=frozenset({"escalation_agent"})),
     "escalate_ticket": _tool("escalate_ticket", "Escalate a ticket for human support.", escalate_ticket_tool, read_only=False, confirmation=True, agents=frozenset({"escalation_agent"})),
-    "knowledge_base_search": _tool("knowledge_base_search", "Search the enterprise knowledge base.", knowledge_base_search_tool, read_only=True),
+    "knowledge_base_search": _tool("knowledge_base_search", "Search the enterprise knowledge base.", knowledge_base_search_tool, read_only=True, agents=frozenset({"billing_agent", "technical_agent", "product_agent", "sales_agent"})),
 }
 
 

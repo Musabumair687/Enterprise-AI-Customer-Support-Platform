@@ -10,15 +10,21 @@ from app.state.chat_state import ChatState
 
 
 class CustomerSupportWorkflow:
-    """Run a conversation through the initial intent-classification graph."""
+    """Run a conversation through classification, routing, and a scoped agent."""
 
-    def __init__(self, intent_classifier: IntentClassifierNode | None = None) -> None:
-        self.graph = build_graph(intent_classifier)
+    def __init__(self, intent_classifier: IntentClassifierNode | None = None, agents: dict[str, object] | None = None) -> None:
+        self.graph = build_graph(intent_classifier, agents)
 
     def invoke(self, message: str, session_id: str | None = None) -> ChatState:
-        """Classify one message; Phase 9 intentionally does not generate an answer."""
-        return self.graph.invoke({"messages": [HumanMessage(content=message)], "session_id": session_id or str(uuid4()), "intent": None, "metadata": {}})
+        """Handle one customer message through its designated specialized agent."""
+        return self.graph.invoke(self._initial_state([HumanMessage(content=message)], session_id or str(uuid4())))
 
     def invoke_messages(self, messages: list[BaseMessage], session_id: str) -> ChatState:
         """Classify a conversation from its latest non-empty human message."""
-        return self.graph.invoke({"messages": messages, "session_id": session_id, "intent": None, "metadata": {}})
+        return self.graph.invoke(self._initial_state(messages, session_id))
+
+    @staticmethod
+    def _initial_state(messages: list[BaseMessage], session_id: str) -> ChatState:
+        return {"messages": messages, "session_id": session_id, "customer_id": None,
+                "intent": None, "agent": None, "tool_calls": [], "retrieved_context": None,
+                "tool_results": {}, "response": None, "metadata": {}}
