@@ -27,7 +27,7 @@ changes in production.
 from datetime import datetime
 from decimal import Decimal
 
-from sqlalchemy import Date, DateTime, ForeignKey, Numeric, String, Text, func
+from sqlalchemy import JSON, Date, DateTime, ForeignKey, Integer, Numeric, String, Text, UniqueConstraint, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
@@ -68,6 +68,12 @@ class Customer(Base):
     conversations: Mapped[list["Conversation"]] = relationship(back_populates="customer")
     feature_requests: Mapped[list["FeatureRequest"]] = relationship(
         back_populates="customer"
+    )
+    conversation_sessions: Mapped[list["ConversationSession"]] = relationship(
+        back_populates="customer", cascade="all, delete-orphan"
+    )
+    memories: Mapped[list["CustomerMemory"]] = relationship(
+        back_populates="customer", cascade="all, delete-orphan"
     )
 
 
@@ -172,6 +178,94 @@ class Conversation(Base):
 
     customer: Mapped["Customer"] = relationship(back_populates="conversations")
     ticket: Mapped["Ticket | None"] = relationship(back_populates="conversations")
+
+
+class ConversationSession(Base):
+    """One persistent support session; existing Conversation rows remain historical imported messages."""
+
+    __tablename__ = "conversation_sessions"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    customer_id: Mapped[int] = mapped_column(ForeignKey("customers.id"), nullable=False, index=True)
+    session_id: Mapped[str] = mapped_column(String(100), unique=True, index=True, nullable=False)
+    status: Mapped[str] = mapped_column(String(30), default="active", nullable=False)
+    current_intent: Mapped[str | None] = mapped_column(String(80))
+    current_product: Mapped[str | None] = mapped_column(String(150))
+    current_issue: Mapped[str | None] = mapped_column(String(150))
+    current_ticket: Mapped[str | None] = mapped_column(String(100))
+    session_data: Mapped[dict | None] = mapped_column(JSON)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    ended_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    customer: Mapped["Customer"] = relationship(back_populates="conversation_sessions")
+    messages: Mapped[list["ConversationMessage"]] = relationship(
+        back_populates="conversation", cascade="all, delete-orphan", order_by="ConversationMessage.created_at"
+    )
+    summary: Mapped["ConversationSummary | None"] = relationship(
+        back_populates="conversation", cascade="all, delete-orphan", uselist=False
+    )
+
+
+class ConversationMessage(Base):
+    """An auditable message generated during a Phase 11 conversation session."""
+
+    __tablename__ = "conversation_messages"
+    __table_args__ = (UniqueConstraint("conversation_id", "turn_id", "role", name="uq_conversation_message_turn"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    conversation_id: Mapped[int] = mapped_column(
+        ForeignKey("conversation_sessions.id"), nullable=False, index=True
+    )
+    role: Mapped[str] = mapped_column(String(30), nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    message_metadata: Mapped[dict | None] = mapped_column(JSON)
+    turn_id: Mapped[str | None] = mapped_column(String(64))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), index=True)
+
+    conversation: Mapped["ConversationSession"] = relationship(back_populates="messages")
+
+
+class ConversationSummary(Base):
+    """Compressed working context for a long session; it never replaces original messages."""
+
+    __tablename__ = "conversation_summaries"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    conversation_id: Mapped[int] = mapped_column(
+        ForeignKey("conversation_sessions.id"), unique=True, nullable=False, index=True
+    )
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    covered_message_count: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    conversation: Mapped["ConversationSession"] = relationship(back_populates="summary")
+
+
+class CustomerMemory(Base):
+    """A selectively promoted fact that is useful across a customer's future support sessions."""
+
+    __tablename__ = "customer_memories"
+    __table_args__ = (UniqueConstraint("customer_id", "memory_type", "content_normalized", name="uq_customer_memory_content"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    customer_id: Mapped[int] = mapped_column(ForeignKey("customers.id"), nullable=False, index=True)
+    memory_type: Mapped[str] = mapped_column(String(50), nullable=False, index=True)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    content_normalized: Mapped[str] = mapped_column(String(1_000), nullable=False)
+    importance: Mapped[int] = mapped_column(Integer, default=3, nullable=False)
+    memory_metadata: Mapped[dict | None] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
+    )
+
+    customer: Mapped["Customer"] = relationship(back_populates="memories")
 
 
 class FeatureRequest(Base):

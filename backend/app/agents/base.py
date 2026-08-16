@@ -4,6 +4,7 @@ from langchain_core.messages import HumanMessage
 
 from app.core.logging import get_logger
 from app.llm import LLMService
+from app.memory.memory_manager import MemoryManager
 from app.state.chat_state import ChatState
 
 
@@ -25,7 +26,9 @@ class SpecializedAgent:
             return {"agent": self.name, "response": "Please share your question so I can help.",
                     "metadata": {**state.get("metadata", {}), "agent_status": "empty_message"}}
         try:
-            response = self.llm_service.generate(message, system_prompt=self.system_prompt, max_tokens=512)
+            memory_context = MemoryManager.format_context(state)
+            system_prompt = f"{self.system_prompt}\n\n{memory_context}" if memory_context else self.system_prompt
+            response = self.llm_service.generate(message, system_prompt=system_prompt, max_tokens=512)
         except Exception:
             self.logger.warning("Specialized agent unavailable | session_id=%s agent=%s", state["session_id"], self.name)
             return {"agent": self.name,

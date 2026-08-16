@@ -12,11 +12,17 @@ class ChatState(TypedDict, total=False):
 
     messages: list[BaseMessage]
     session_id: str
+    turn_id: str
     customer_id: int | None
+    conversation_id: int | None
     intent: Intent | None
     agent: str | None
     tool_calls: list[str]
     retrieved_context: str | None
     tool_results: dict[str, Any]
     response: str | None
+    conversation_summary: str | None
+    recent_messages: list[dict[str, object]]
+    long_term_memories: list[dict[str, object]]
+    session_memory: dict[str, object]
     metadata: dict[str, Any]
