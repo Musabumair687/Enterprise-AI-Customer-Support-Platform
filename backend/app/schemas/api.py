@@ -6,6 +6,23 @@ from decimal import Decimal
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
+class ChatRequest(BaseModel):
+    """One authenticated customer-support message sent to the collaboration workflow."""
+
+    message: str = Field(min_length=1, max_length=8_000)
+    session_id: str | None = Field(default=None, min_length=1, max_length=255)
+    customer_id: int | None = Field(default=None, gt=0)
+
+
+class ChatResponse(BaseModel):
+    """Customer-safe output from a completed supervisor run."""
+
+    response: str
+    session_id: str
+    agents_used: list[str]
+    escalated: bool
+
+
 class CustomerRead(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 

@@ -1,4 +1,4 @@
-"""Application-facing entry point for executing the Phase 9 intent graph."""
+"""Application-facing entry point for the Phase 12 collaboration graph."""
 
 from uuid import uuid4
 
@@ -10,7 +10,7 @@ from app.state.chat_state import ChatState
 
 
 class CustomerSupportWorkflow:
-    """Run a conversation through classification, routing, and a scoped agent."""
+    """Run a conversation through bounded supervisor-directed specialist collaboration."""
 
     def __init__(self, intent_classifier: IntentClassifierNode | None = None, agents: dict[str, object] | None = None, memory_manager=None) -> None:
         self.graph = build_graph(intent_classifier, agents, memory_manager)
@@ -28,4 +28,6 @@ class CustomerSupportWorkflow:
         return {"messages": messages, "session_id": session_id, "turn_id": str(uuid4()), "customer_id": customer_id,
                 "intent": None, "agent": None, "tool_calls": [], "retrieved_context": None,
                 "tool_results": {}, "response": None, "conversation_id": None,
-                "conversation_summary": None, "recent_messages": [], "long_term_memories": [], "session_memory": {}, "metadata": {}}
+                "conversation_summary": None, "recent_messages": [], "long_term_memories": [], "session_memory": {}, "metadata": {},
+                "current_agent": None, "next_agent": None, "task": None, "subtasks": [], "agent_results": {}, "agent_step_count": 0,
+                "available_agents": []}

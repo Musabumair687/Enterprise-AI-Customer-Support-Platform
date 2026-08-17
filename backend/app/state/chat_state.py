@@ -17,6 +17,13 @@ class ChatState(TypedDict, total=False):
     conversation_id: int | None
     intent: Intent | None
     agent: str | None
+    current_agent: str | None
+    next_agent: str | None
+    task: str | None
+    subtasks: list[dict[str, object]]
+    agent_results: dict[str, dict[str, object]]
+    agent_step_count: int
+    available_agents: list[str]
     tool_calls: list[str]
     retrieved_context: str | None
     tool_results: dict[str, Any]
