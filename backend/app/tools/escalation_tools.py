@@ -19,7 +19,7 @@ def assign_ticket_tool(db: Session, tool_input: AssignTicketInput) -> TicketTool
         raise ToolNotFoundError(f"Employee {tool_input.employee_id} was not found.")
     if not employee.is_active:
         raise ToolOperationError(f"Employee {tool_input.employee_id} is not active.")
-    updated, error = update_ticket(db, ticket, {"assigned_employee_id": employee.id, "assigned_agent_name": employee.name})
+    updated, error = update_ticket(db, ticket, {"assigned_employee_id": employee.id, "assigned_agent_name": employee.name, "status": "assigned"})
     if error or updated is None:
         raise ToolOperationError(error or "Ticket assignment failed.")
     return serialize_ticket(updated)
@@ -30,7 +30,7 @@ def escalate_ticket_tool(db: Session, tool_input: EscalateTicketInput) -> Ticket
     ticket = get_ticket(db, tool_input.ticket_id)
     if ticket is None:
         raise ToolNotFoundError(f"Ticket {tool_input.ticket_id} was not found.")
-    values: dict[str, object] = {"is_escalated": True, "priority": "urgent"}
+    values: dict[str, object] = {"is_escalated": True, "priority": "urgent", "escalation_reason": tool_input.reason}
     prior_resolution = ticket.resolution.strip() if ticket.resolution else ""
     values["resolution"] = f"{prior_resolution}\n\nEscalation reason: {tool_input.reason}".strip()
     if tool_input.assigned_employee_id is not None:
@@ -39,7 +39,7 @@ def escalate_ticket_tool(db: Session, tool_input: EscalateTicketInput) -> Ticket
             raise ToolNotFoundError(f"Employee {tool_input.assigned_employee_id} was not found.")
         if not employee.is_active:
             raise ToolOperationError(f"Employee {tool_input.assigned_employee_id} is not active.")
-        values.update(assigned_employee_id=employee.id, assigned_agent_name=employee.name)
+        values.update(assigned_employee_id=employee.id, assigned_agent_name=employee.name, status="assigned")
     updated, error = update_ticket(db, ticket, values)
     if error or updated is None:
         raise ToolOperationError(error or "Ticket escalation failed.")

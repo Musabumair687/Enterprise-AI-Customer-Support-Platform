@@ -123,6 +123,7 @@ class Ticket(Base):
     department: Mapped[str | None] = mapped_column(String(100))
     category: Mapped[str | None] = mapped_column(String(80))
     assigned_agent_name: Mapped[str | None] = mapped_column(String(150))
+    escalation_reason: Mapped[str | None] = mapped_column(Text)
     resolution: Mapped[str | None] = mapped_column(Text)
     sentiment: Mapped[str | None] = mapped_column(String(30))
     resolution_time_hours: Mapped[Decimal | None] = mapped_column(Numeric(10, 2))
@@ -134,6 +135,7 @@ class Ticket(Base):
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), onupdate=func.now()
     )
+    resolved_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
     customer: Mapped["Customer"] = relationship(back_populates="tickets")
     assigned_employee: Mapped["Employee | None"] = relationship(back_populates="assigned_tickets")

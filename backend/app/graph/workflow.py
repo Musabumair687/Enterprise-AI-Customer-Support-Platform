@@ -30,4 +30,4 @@ class CustomerSupportWorkflow:
                 "tool_results": {}, "response": None, "conversation_id": None,
                 "conversation_summary": None, "recent_messages": [], "long_term_memories": [], "session_memory": {}, "metadata": {},
                 "current_agent": None, "next_agent": None, "task": None, "subtasks": [], "agent_results": {}, "agent_step_count": 0,
-                "available_agents": []}
+                "available_agents": [], "confidence_score": 0.0, "escalation_required": False, "escalation_reason": None, "assigned_employee": None, "ticket_id": None}

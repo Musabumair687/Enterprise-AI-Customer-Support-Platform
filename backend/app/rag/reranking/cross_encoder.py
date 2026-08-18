@@ -13,10 +13,13 @@ class CrossEncoderReranker:
         self.model_name = model_name
         self.allow_fallback = allow_fallback
         self._model = None
+        self._model_load_failed = False
 
     @property
     def model(self):
         """Load the model only on the first reranking request."""
+        if self._model_load_failed:
+            return None
         if self._model is None:
             try:
                 from sentence_transformers import CrossEncoder
@@ -24,7 +27,13 @@ class CrossEncoderReranker:
                 if not self.allow_fallback:
                     raise RuntimeError("Install sentence-transformers to use cross-encoder reranking.") from exc
                 return None
-            self._model = CrossEncoder(self.model_name)
+            try:
+                self._model = CrossEncoder(self.model_name)
+            except Exception as exc:
+                if not self.allow_fallback:
+                    raise RuntimeError(f"Unable to load cross-encoder model '{self.model_name}'.") from exc
+                self._model_load_failed = True
+                return None
         return self._model
 
     def rerank(self, query: str, candidates: Sequence[RetrievedChunk], top_k: int = 5) -> list[RetrievedChunk]:

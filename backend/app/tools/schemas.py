@@ -72,6 +72,7 @@ class TicketToolOutput(ToolModel):
     category: str | None
     assigned_agent_name: str | None
     is_escalated: bool
+    escalation_reason: str | None
     created_at: datetime
     updated_at: datetime
 

@@ -10,6 +10,13 @@ def route_supervisor(state: ChatState) -> str:
     return state["next_agent"]
 
 
+def route_after_confidence(state: ChatState) -> str:
+    """Send low-confidence turns to the handoff node exactly once."""
+    if state.get("escalation_required") and "escalation_agent" not in state.get("agent_results", {}):
+        return "escalation_agent"
+    return "supervisor"
+
+
 def record_agent_step(state: ChatState) -> dict[str, object]:
     """Increment the collaboration counter only after a specialist has run."""
     completed_agent = state.get("current_agent")

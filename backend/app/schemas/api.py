@@ -21,6 +21,23 @@ class ChatResponse(BaseModel):
     session_id: str
     agents_used: list[str]
     escalated: bool
+    escalation: "ChatEscalation | None" = None
+
+
+class EscalationAssignee(BaseModel):
+    """The human owner returned to a frontend after a successful handoff."""
+
+    id: int
+    name: str
+    department: str
+
+
+class ChatEscalation(BaseModel):
+    """Stable, optional human-handoff details for the chat client."""
+
+    ticket_id: int | None
+    reason: str | None
+    assigned_employee: EscalationAssignee | None = None
 
 
 class CustomerRead(BaseModel):
@@ -108,6 +125,7 @@ class TicketBase(BaseModel):
     department: str | None = Field(default=None, max_length=100)
     category: str | None = Field(default=None, max_length=80)
     assigned_agent_name: str | None = Field(default=None, max_length=150)
+    escalation_reason: str | None = None
     resolution: str | None = None
     sentiment: str | None = Field(default=None, max_length=30)
     resolution_time_hours: Decimal | None = Field(default=None, ge=0)
@@ -130,8 +148,8 @@ class TicketBase(BaseModel):
     def validate_status(cls, value: str) -> str:
         """Limit tickets to the workflow states supported by the platform."""
         normalized = value.strip().lower().replace(" ", "_")
-        if normalized not in {"open", "pending", "in_progress", "resolved", "closed"}:
-            raise ValueError("Status must be one of: open, pending, in_progress, resolved, closed.")
+        if normalized not in {"open", "assigned", "in_progress", "waiting_customer", "resolved", "closed"}:
+            raise ValueError("Status must be one of: open, assigned, in_progress, waiting_customer, resolved, closed.")
         return normalized
 
 
@@ -152,6 +170,7 @@ class TicketUpdate(BaseModel):
     sentiment: str | None = Field(default=None, max_length=30)
     resolution_time_hours: Decimal | None = Field(default=None, ge=0)
     is_escalated: bool | None = None
+    escalation_reason: str | None = None
     customer_id: int | None = None
     assigned_employee_id: int | None = None
     product_id: int | None = None
@@ -173,8 +192,8 @@ class TicketUpdate(BaseModel):
         if value is None:
             return value
         normalized = value.strip().lower().replace(" ", "_")
-        if normalized not in {"open", "pending", "in_progress", "resolved", "closed"}:
-            raise ValueError("Status must be one of: open, pending, in_progress, resolved, closed.")
+        if normalized not in {"open", "assigned", "in_progress", "waiting_customer", "resolved", "closed"}:
+            raise ValueError("Status must be one of: open, assigned, in_progress, waiting_customer, resolved, closed.")
         return normalized
 
     @model_validator(mode="after")
@@ -199,3 +218,4 @@ class TicketRead(TicketBase):
     customer_id: int
     created_at: datetime
     updated_at: datetime
+    resolved_at: datetime | None

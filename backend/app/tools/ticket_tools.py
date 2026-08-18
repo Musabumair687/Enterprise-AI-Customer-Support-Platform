@@ -21,7 +21,8 @@ def serialize_ticket(ticket) -> TicketToolOutput:
         ticket_id=ticket.id, external_id=ticket.external_id, customer_id=ticket.customer_id,
         title=ticket.title, description=ticket.description, status=ticket.status, priority=ticket.priority,
         category=ticket.category, assigned_agent_name=ticket.assigned_agent_name,
-        is_escalated=ticket.is_escalated, created_at=ticket.created_at, updated_at=ticket.updated_at,
+        is_escalated=ticket.is_escalated, escalation_reason=ticket.escalation_reason,
+        created_at=ticket.created_at, updated_at=ticket.updated_at,
     )
 
 

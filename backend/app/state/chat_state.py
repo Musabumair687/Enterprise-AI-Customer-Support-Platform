@@ -24,6 +24,11 @@ class ChatState(TypedDict, total=False):
     agent_results: dict[str, dict[str, object]]
     agent_step_count: int
     available_agents: list[str]
+    confidence_score: float
+    escalation_required: bool
+    escalation_reason: str | None
+    assigned_employee: dict[str, object] | None
+    ticket_id: int | None
     tool_calls: list[str]
     retrieved_context: str | None
     tool_results: dict[str, Any]
