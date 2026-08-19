@@ -29,6 +29,7 @@ class Settings(BaseSettings):
     chroma_path: str = Field(min_length=1)
     embedding_batch_size: int = Field(default=50, ge=1, le=100)
     embedding_batch_pause_seconds: float = Field(default=30.0, ge=0)
+    frontend_url: str = Field(default="http://localhost:5173")
 
     model_config = SettingsConfigDict(
         env_file=ENV_FILE,
